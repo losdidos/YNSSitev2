@@ -62,23 +62,23 @@ export default function BookingPage() {
           <form onSubmit={handleSubmit} className="grid gap-5" noValidate>
             <label className="grid gap-2 text-sm font-bold">
               Naam
-              <input name="customerName" type="text" required minLength={2} maxLength={100} autoComplete="name" className="h-12 border border-[#bbbcb6] bg-[#fbfbf8] px-3 outline-none focus:border-black" />
+              <input name="customerName" type="text" required minLength={2} maxLength={100} autoComplete="name" className="h-12 rounded-md border border-[#bbbcb6] bg-[#fbfbf8] px-3 outline-none focus:border-black" />
             </label>
 
             <div className="grid gap-5 sm:grid-cols-2">
               <label className="grid gap-2 text-sm font-bold">
                 E-mailadres
-                <input name="customerEmail" type="email" required maxLength={254} autoComplete="email" className="h-12 border border-[#bbbcb6] bg-[#fbfbf8] px-3 outline-none focus:border-black" />
+                <input name="customerEmail" type="email" required maxLength={254} autoComplete="email" className="h-12 rounded-md border border-[#bbbcb6] bg-[#fbfbf8] px-3 outline-none focus:border-black" />
               </label>
               <label className="grid gap-2 text-sm font-bold">
                 Telefoonnummer
-                <input name="customerPhone" type="tel" required minLength={6} maxLength={30} autoComplete="tel" className="h-12 border border-[#bbbcb6] bg-[#fbfbf8] px-3 outline-none focus:border-black" />
+                <input name="customerPhone" type="tel" required minLength={6} maxLength={30} autoComplete="tel" className="h-12 rounded-md border border-[#bbbcb6] bg-[#fbfbf8] px-3 outline-none focus:border-black" />
               </label>
             </div>
 
             <label className="grid gap-2 text-sm font-bold">
               Gewenste dienst
-              <select name="serviceType" required defaultValue="" className="h-12 border border-[#bbbcb6] bg-[#fbfbf8] px-3 outline-none focus:border-black">
+              <select name="serviceType" required defaultValue="" className="h-12 rounded-md border border-[#bbbcb6] bg-[#fbfbf8] px-3 outline-none focus:border-black">
                 <option value="" disabled>Kies een dienst</option>
                 <option>Interieur detailing</option>
                 <option>Polijsteren</option>
@@ -90,12 +90,12 @@ export default function BookingPage() {
 
             <label className="grid gap-2 text-sm font-bold">
               Extra info <span className="font-normal text-[#777771]">(optioneel)</span>
-              <textarea name="notes" maxLength={1200} rows={5} className="resize-y border border-[#bbbcb6] bg-[#fbfbf8] p-3 outline-none focus:border-black" />
+              <textarea name="notes" maxLength={1200} rows={5} className="resize-y rounded-md border border-[#bbbcb6] bg-[#fbfbf8] p-3 outline-none focus:border-black" />
             </label>
 
             {state === 'error' && <p role="alert" className="border-l-4 border-red-700 bg-red-50 p-4 text-sm text-red-900">{errorMsg}</p>}
 
-            <button type="submit" disabled={state === 'loading'} className="cta-primary mt-2 w-full disabled:cursor-not-allowed disabled:opacity-60">
+            <button type="submit" disabled={state === 'loading'} className="cta-primary mt-2 min-h-14 w-full text-sm disabled:cursor-not-allowed disabled:opacity-60">
               {state === 'loading' ? 'Aanvraag versturen...' : <>Aanvraag versturen <ArrowUpRight size={17} /></>}
             </button>
           </form>

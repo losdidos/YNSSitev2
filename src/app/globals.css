@@ -151,6 +151,27 @@ select {
 	transition: opacity 320ms ease;
 }
 
+.reviews-track {
+	scrollbar-width: none;
+	-webkit-overflow-scrolling: touch;
+}
+
+.reviews-track::-webkit-scrollbar {
+	display: none;
+}
+
+.faq-answer-grid {
+	display: grid;
+	grid-template-rows: 0fr;
+	opacity: 0;
+	transition: grid-template-rows 280ms ease, opacity 180ms ease;
+}
+
+.faq-answer-grid.is-open {
+	grid-template-rows: 1fr;
+	opacity: 1;
+}
+
 .group:hover .service-glow,
 .group:focus-visible .service-glow {
 	opacity: 0.95;

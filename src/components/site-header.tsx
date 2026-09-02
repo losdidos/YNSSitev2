@@ -22,28 +22,23 @@ export function SiteHeader({ overlay = false }: SiteHeaderProps) {
   const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
-    const updateScrollState = () => {
-      const scrollTop = Math.max(
-        window.scrollY,
-        document.documentElement.scrollTop,
-        document.body.scrollTop
-      );
-      setHasScrolled(scrollTop > 12);
-    };
+    if (!overlay) return;
 
-    updateScrollState();
-    window.addEventListener('scroll', updateScrollState, { passive: true });
-    document.addEventListener('scroll', updateScrollState, { capture: true, passive: true });
-    return () => {
-      window.removeEventListener('scroll', updateScrollState);
-      document.removeEventListener('scroll', updateScrollState, { capture: true });
-    };
-  }, []);
+    const sentinel = document.getElementById('home-top-sentinel');
+    if (!sentinel) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      setHasScrolled(!entry.isIntersecting);
+    });
+
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, [overlay]);
 
   return (
     <header
       className={`${overlay ? 'fixed inset-x-0' : 'sticky'} top-0 z-30 text-white transition-[background-color,box-shadow] duration-300 ${
-        overlay && !hasScrolled ? 'bg-transparent' : 'bg-[#0a0a0a] shadow-lg shadow-black/25'
+        overlay && !hasScrolled && !mobileOpen ? 'bg-transparent' : 'bg-[#0a0a0a] shadow-lg shadow-black/25'
       }`}
     >
       <div className="content-width flex h-20 items-center justify-between gap-6">
@@ -59,7 +54,7 @@ export function SiteHeader({ overlay = false }: SiteHeaderProps) {
         </Link>
 
         <nav className="hidden h-full items-center gap-1 lg:flex" aria-label="Hoofdnavigatie">
-            <Link href="/" className="px-4 py-3 text-sm font-bold hover:text-[#f9b233]">
+            <Link href="/" className="rounded-full px-5 py-3 text-sm font-bold transition hover:bg-[#f9b233] hover:text-black focus:bg-[#f9b233] focus:text-black">
             Home
           </Link>
           <div className="group relative flex h-full items-center">
@@ -104,10 +99,10 @@ export function SiteHeader({ overlay = false }: SiteHeaderProps) {
               </div>
             </div>
           </div>
-          <Link href="/over-ons" className="px-4 py-3 text-sm font-bold hover:text-[#f9b233]">
+          <Link href="/over-ons" className="rounded-full px-5 py-3 text-sm font-bold transition hover:bg-[#f9b233] hover:text-black focus:bg-[#f9b233] focus:text-black">
             Over ons
           </Link>
-          <Link href="/faq" className="px-4 py-3 text-sm font-bold hover:text-[#f9b233]">
+          <Link href="/faq" className="rounded-full px-5 py-3 text-sm font-bold transition hover:bg-[#f9b233] hover:text-black focus:bg-[#f9b233] focus:text-black">
             FAQ
           </Link>
         </nav>

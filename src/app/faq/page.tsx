@@ -1,6 +1,7 @@
 'use client';
 
 import { ChevronDown } from 'lucide-react';
+import { useState } from 'react';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
 
@@ -64,21 +65,36 @@ const questions = [
 ];
 
 export default function FaqPage() {
+  const [openQuestion, setOpenQuestion] = useState<string | null>(null);
+
   return (
     <div className="page-shell bg-[#f4f3ed]">
       <SiteHeader />
       <main className="content-width py-16 md:py-24">
         <p className="eyebrow">Helder en eenvoudig</p>
-        <h1 className="display mt-5 text-6xl sm:text-7xl md:text-8xl">Veelgestelde<br />vragen.</h1>
+        <h1 className="display mt-5 text-5xl sm:text-7xl md:text-8xl">Veelgestelde<br />vragen.</h1>
         <div className="mt-14 border-t border-[#bab9b4]">
-          {questions.map(({ question, answer }) => (
-            <details key={question} className="group border-b border-[#bab9b4] py-5">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-lg font-bold md:text-xl">
+          {questions.map(({ question, answer }, index) => (
+            <div key={question} className="border-b border-[#bab9b4]">
+              <button
+                type="button"
+                onClick={() => setOpenQuestion((current) => current === question ? null : question)}
+                aria-expanded={openQuestion === question}
+                aria-controls={`answer-${index}`}
+                className="flex w-full items-center justify-between gap-6 py-5 text-left text-lg font-bold md:text-xl"
+              >
                 {question}
-                <ChevronDown className="shrink-0 transition group-open:rotate-180" />
-              </summary>
-              <div className="max-w-2xl pt-4 leading-7 text-[#4b4b47]">{answer}</div>
-            </details>
+                <ChevronDown className={`shrink-0 transition-transform duration-300 ${openQuestion === question ? 'rotate-180' : ''}`} />
+              </button>
+              <div
+                id={`answer-${index}`}
+                className={`faq-answer-grid ${openQuestion === question ? 'is-open' : ''}`}
+              >
+                <div className="min-h-0 overflow-hidden">
+                  <div className="max-w-2xl pb-5 leading-7 text-[#4b4b47]">{answer}</div>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </main>

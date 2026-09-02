@@ -1,14 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowDownRight, ArrowUpRight, Check } from 'lucide-react';
+import { ReviewsCarousel } from '@/components/reviews-carousel';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
 
 const services = [
   { title: 'Interieur\ndetailing', image: '/pictures/Black_mercedes_interieur_frontdash_clean.jpg', id: '01' },
-  { title: 'Polijsteren', image: '/pictures/Black_Audi_Scraped_after.jpg', id: '02' },
-  { title: 'Keramische\ncoating', image: '/pictures/porshe_tyre_after.jpeg', id: '03' },
-  { title: 'Premium\nwasbeurt', image: '/pictures/Black_Audi_Front_After.jpg', id: '04' },
+  { title: 'Polijsteren', image: '/pictures/Scherm_afbeelding 2026-09-02 om 14.42.44.png', id: '02' },
+  { title: 'Keramische\ncoating', image: '/pictures/Scherm_afbeelding 2026-09-02 om 14.43.07.png', id: '03' },
+  { title: 'Premium\nwasbeurt', image: '/pictures/image.png', id: '04' },
 ];
 
 export default function HomePage() {
@@ -17,6 +18,7 @@ export default function HomePage() {
       <SiteHeader overlay />
       <main>
         <section className="relative isolate min-h-[670px] overflow-hidden bg-black text-white md:min-h-[760px]">
+          <span id="home-top-sentinel" className="absolute top-0 h-px w-px" aria-hidden="true" />
           <Image
             src="/pictures/HeaderBMW.JPG"
             alt="BMW professioneel gedetaild door YNS Car Care"
@@ -43,16 +45,23 @@ export default function HomePage() {
         </section>
 
         <section className="bg-[#f4f3ed] py-20 md:py-28">
-          <div className="content-width grid items-end gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+          <div className="content-width grid items-start gap-10 lg:grid-cols-[0.95fr_1.05fr]">
             <div>
               <p className="eyebrow">Aandacht voor afwerking</p>
               <h2 className="display mt-5 max-w-md text-5xl sm:text-6xl md:text-7xl">Geen snelle beurt.<br />Wel een zichtbaar verschil.</h2>
             </div>
-            <div className="grid gap-7 text-base leading-7 text-[#444440] md:grid-cols-2">
-              <p>YNS Car Care brengt auto&apos;s terug naar hun beste vorm. Van een fris, verzorgd interieur tot lakcorrectie die diepte en glans terugbrengt.</p>
-              <div>
-                <p>Elke behandeling start met een eerlijke blik op jouw wagen. Daarna kiezen we de juiste aanpak, zonder onnodige stappen.</p>
-                <Link href="/over-ons" className="mt-5 inline-flex items-center gap-2 border-b-2 border-[#f9b233] pb-1 text-sm font-bold uppercase">Over YNS <ArrowUpRight size={16} /></Link>
+            <div>
+              <div className="aspect-[16/10] overflow-hidden rounded-lg bg-black">
+                <video autoPlay muted loop playsInline className="h-full w-full object-cover" aria-label="YNS Car Care detailing in actie">
+                  <source src="/pictures/yns-detailing.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div className="mt-8 grid gap-7 text-base leading-7 text-[#444440] md:grid-cols-2">
+                <p>YNS Car Care brengt auto&apos;s terug naar hun beste vorm. Van een fris, verzorgd interieur tot lakcorrectie die diepte en glans terugbrengt.</p>
+                <div>
+                  <p>Elke behandeling start met een eerlijke blik op jouw wagen. Daarna kiezen we de juiste aanpak, zonder onnodige stappen.</p>
+                  <Link href="/over-ons" className="mt-5 inline-flex items-center gap-2 border-b-2 border-[#f9b233] pb-1 text-sm font-bold uppercase">Over YNS <ArrowUpRight size={16} /></Link>
+                </div>
               </div>
             </div>
           </div>
@@ -132,6 +141,8 @@ export default function HomePage() {
             <Link href="/booking" className="cta-primary">Maak een afspraak <ArrowUpRight size={17} /></Link>
           </div>
         </section>
+
+        <ReviewsCarousel />
       </main>
       <SiteFooter />
     </div>
