@@ -22,11 +22,22 @@ export function SiteHeader({ overlay = false }: SiteHeaderProps) {
   const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
-    const updateScrollState = () => setHasScrolled(window.scrollY > 24);
+    const updateScrollState = () => {
+      const scrollTop = Math.max(
+        window.scrollY,
+        document.documentElement.scrollTop,
+        document.body.scrollTop
+      );
+      setHasScrolled(scrollTop > 12);
+    };
 
     updateScrollState();
     window.addEventListener('scroll', updateScrollState, { passive: true });
-    return () => window.removeEventListener('scroll', updateScrollState);
+    document.addEventListener('scroll', updateScrollState, { capture: true, passive: true });
+    return () => {
+      window.removeEventListener('scroll', updateScrollState);
+      document.removeEventListener('scroll', updateScrollState, { capture: true });
+    };
   }, []);
 
   return (
