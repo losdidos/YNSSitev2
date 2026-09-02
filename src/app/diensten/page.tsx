@@ -53,7 +53,7 @@ export default function ServicesPage() {
           <div className="content-width">
             <p className="eyebrow text-[#f9b233]">YNS Car Care</p>
             <h1 className="display mt-5 text-6xl sm:text-7xl md:text-8xl">Onze diensten.</h1>
-            <p className="mt-6 max-w-xl text-lg leading-7 text-[#c4c4be]">Van een opgefrist interieur tot lakbescherming op lange termijn. Elke behandeling wordt afgestemd op wat jouw wagen nodig heeft.</p>
+            <p className="mt-6 max-w-xl text-lg leading-7 text-[#c4c4be]">Van een opgefrist interieur tot lakbescherming op lange termijn. Elke behandeling wordt afgestemd op wat jouw wagen nodig heeft, voor wie uitsluitend vertrouwd is met het beste.</p>
           </div>
         </section>
         <section className="content-width py-14 md:py-20">

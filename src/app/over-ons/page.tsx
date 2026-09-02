@@ -16,7 +16,10 @@ export default function AboutPage() {
             <p className="eyebrow">Over YNS Car Care</p>
             <h1 className="display mt-5 text-6xl sm:text-7xl md:text-8xl">Your new<br /><span className="text-[#f9b233]">status.</span></h1>
           </div>
-          <p className="max-w-xl text-lg leading-8 text-[#454541]">YNS Car Care is er voor eigenaars die hun wagen met zorg behandelen. Niet alleen schoon, maar verzorgd tot in de afwerking.</p>
+          <div className="max-w-xl text-lg leading-8 text-[#454541]">
+            <p>Bij YNS Car Care draait alles om de kunst van auto-optimalisatie. Wat begon als een gepassioneerde liefde voor auto&apos;s, is uitgegroeid tot een gespecialiseerde studio waar nauwkeurigheid, finish en uitstekende bescherming samenkomen.</p>
+            <p className="mt-5 font-bold text-black">Onze diensten verschillen van de gebruikelijke autoverzorging. YNS Car Care biedt een complete oplossing voor degenen die uitsluitend vertrouwd zijn met het beste.</p>
+          </div>
         </section>
         <section className="bg-[#111] text-white">
           <div className="content-width grid min-h-[590px] lg:grid-cols-[1.05fr_0.95fr]">
@@ -25,8 +28,9 @@ export default function AboutPage() {
             </div>
             <div className="flex flex-col justify-center py-16 lg:py-24">
               <p className="eyebrow text-[#f9b233]">Onze aanpak</p>
-              <h2 className="display mt-5 max-w-lg text-5xl sm:text-6xl">Tijd voor wat je ziet.</h2>
-              <p className="mt-6 max-w-md leading-7 text-[#c6c6c1]">Elke wagen is anders. Daarom kijken we eerst naar de staat van het interieur, de lak en de gewenste finish. Vervolgens werken we stap voor stap aan een resultaat dat bij je verwachtingen past.</p>
+              <h2 className="display mt-5 max-w-xl text-5xl sm:text-6xl">Aandacht voor elk detail, maatwerk voor elke wagen.</h2>
+              <p className="mt-6 max-w-md leading-7 text-[#c6c6c1]">Wij zijn ervan overtuigd dat ware klasse in de kleinigheden ligt. Wij transformeren en beschermen voertuigen op het hoogste niveau door uitsluitend te werken met hoogwaardige producten en de nieuwste technologieën.</p>
+              <p className="mt-5 max-w-md leading-7 text-[#c6c6c1]">Elk binnenkomend voertuig wordt behandeld volgens een enkele standaard: een onberispelijke afwerking die de verwachtingen van de meest veeleisende autobezitter evenaart. Jarenlange ervaring met diverse laksoorten, carrosserieën en ingewikkelde problemen vormt de basis van onze kennis.</p>
               <Link href="/booking" className="cta-primary mt-8 self-start">Maak afspraak <ArrowUpRight size={17} /></Link>
             </div>
           </div>
