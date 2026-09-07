@@ -24,6 +24,7 @@ export async function POST(request: NextRequest) {
       customerEmail: data.customerEmail,
       customerPhone: sanitizeText(data.customerPhone),
       serviceType: sanitizeText(data.serviceType),
+      isBusiness: data.isBusiness,
       notes: data.notes ? sanitizeText(data.notes) : undefined,
     });
   } catch {

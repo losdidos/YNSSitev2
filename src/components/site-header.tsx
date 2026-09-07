@@ -4,14 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { services as serviceList } from '@/lib/services-data';
 
-const services = [
-  { title: 'Interieur detailing', href: '/diensten#interieur' },
-  { title: 'Polijsteren', href: '/diensten#polijsteren' },
-  { title: 'Keramische coating', href: '/diensten#keramische-coating' },
-  { title: 'Premium wasbeurt', href: '/diensten#premium-wasbeurt' },
-  { title: 'Extra', href: '/diensten#extra' },
-];
+const services = serviceList.map((service) => ({ title: service.navLabel, href: `/diensten/${service.slug}` }));
 
 interface SiteHeaderProps {
   overlay?: boolean;
@@ -20,6 +15,7 @@ interface SiteHeaderProps {
 export function SiteHeader({ overlay = false }: SiteHeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   useEffect(() => {
     if (!overlay) return;
@@ -57,14 +53,22 @@ export function SiteHeader({ overlay = false }: SiteHeaderProps) {
             <Link href="/" className="rounded-full px-5 py-3 text-sm font-bold transition hover:bg-[#f9b233] hover:text-black focus:bg-[#f9b233] focus:text-black">
             Home
           </Link>
-          <div className="group relative flex h-full items-center">
+          <div
+            className="group relative flex h-full items-center"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+            onFocus={() => setServicesOpen(true)}
+            onBlur={(e) => {
+              if (!e.currentTarget.contains(e.relatedTarget as Node)) setServicesOpen(false);
+            }}
+          >
             <Link
               href="/diensten"
               className="flex items-center gap-1 rounded-full px-5 py-3 text-sm font-bold group-hover:bg-[#f9b233] group-hover:text-black group-focus-within:bg-[#f9b233] group-focus-within:text-black"
             >
               Diensten <ChevronDown size={17} strokeWidth={2.5} />
             </Link>
-            <div className="invisible absolute left-0 top-[calc(100%-1px)] w-[min(680px,78vw)] border-t border-[#292929] bg-[#111] opacity-0 shadow-2xl transition duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+            <div className="invisible absolute left-0 top-[calc(100%-1px)] z-30 w-[min(680px,78vw)] border-t border-[#292929] bg-[#111] opacity-0 shadow-2xl transition duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
               <div className="grid grid-cols-[1fr_0.86fr]">
                 <div className="p-7">
                   <p className="mb-5 text-xs font-bold uppercase tracking-[0.12em] text-[#f9b233]">
@@ -121,6 +125,11 @@ export function SiteHeader({ overlay = false }: SiteHeaderProps) {
           {mobileOpen ? <X /> : <Menu />}
         </button>
       </div>
+
+      <div
+        aria-hidden="true"
+        className={`pointer-events-none fixed inset-x-0 top-20 bottom-0 z-20 bg-black/70 transition-opacity duration-200 ${servicesOpen ? 'opacity-100' : 'opacity-0'}`}
+      />
 
       {mobileOpen && (
         <nav id="mobile-menu" className="border-t border-[#303030] px-6 py-5 lg:hidden" aria-label="Mobiele navigatie">

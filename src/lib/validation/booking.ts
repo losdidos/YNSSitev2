@@ -13,6 +13,7 @@ export const bookingSchema = z.object({
     .max(30)
     .regex(/^[+()\-\s\d]+$/),
   serviceType: z.string().min(2).max(100),
+  isBusiness: z.preprocess((value) => value === 'true' || value === 'on', z.boolean()).default(false),
   notes: z.string().max(1200).optional(),
 });
 

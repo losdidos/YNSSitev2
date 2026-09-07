@@ -15,6 +15,7 @@ export interface BookingEmailData {
   customerEmail: string;
   customerPhone: string;
   serviceType: string;
+  isBusiness: boolean;
   notes?: string;
 }
 
@@ -29,6 +30,7 @@ export async function sendBookingEmail(data: BookingEmailData): Promise<void> {
       `Email:   ${data.customerEmail}`,
       `Phone:   ${data.customerPhone}`,
       `Service: ${data.serviceType}`,
+      `Zakelijk: ${data.isBusiness ? 'Ja' : 'Nee'}`,
       data.notes ? `Notes:   ${data.notes}` : '',
     ]
       .filter(Boolean)
@@ -40,6 +42,7 @@ export async function sendBookingEmail(data: BookingEmailData): Promise<void> {
         <tr><td style="padding:4px 12px 4px 0"><strong>Email</strong></td><td><a href="mailto:${data.customerEmail}">${data.customerEmail}</a></td></tr>
         <tr><td style="padding:4px 12px 4px 0"><strong>Phone</strong></td><td>${data.customerPhone}</td></tr>
         <tr><td style="padding:4px 12px 4px 0"><strong>Service</strong></td><td>${data.serviceType}</td></tr>
+        <tr><td style="padding:4px 12px 4px 0"><strong>Zakelijk</strong></td><td>${data.isBusiness ? 'Ja' : 'Nee'}</td></tr>
         ${data.notes ? `<tr><td style="padding:4px 12px 4px 0"><strong>Notes</strong></td><td>${data.notes}</td></tr>` : ''}
       </table>
     `,

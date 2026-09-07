@@ -2,27 +2,44 @@
 
 import { Star } from 'lucide-react';
 import { useEffect, useRef } from 'react';
+import Link from 'next/link';
 
 const reviews = [
   {
-    name: 'Mathias V.',
-    service: 'Keramische coating',
-    text: 'Topservice en een resultaat dat echt boven verwachting was. De wagen ziet er opnieuw uit als nieuw.',
+    name: 'Jente Raes',
+    service: 'Detailing',
+    text: 'Ik ben super tevreden over de geleverde service! Mijn auto heeft er nog nooit zo proper uitgezien. De aandacht voor detail en de kwaliteit van het werk zijn top. Zeker voor herhaling vatbaar!',
+    href: 'https://www.instagram.com/ynscarcare/',
   },
   {
-    name: 'Lars D.',
-    service: 'Interieur detailing',
-    text: 'Heel grondig gewerkt en duidelijke communicatie van begin tot einde. Een echte aanrader.',
+    name: 'Yasin Helouaoui',
+    service: 'Detailing',
+    text: 'ik herken mijn auto niet meer😂 merci mannen👏🫶',
+    href: 'https://www.instagram.com/ynscarcare/',
   },
   {
-    name: 'Yannick B.',
-    service: 'Polijsteren',
-    text: 'De lak heeft opnieuw diepte en glans. Je merkt meteen dat hier met oog voor detail gewerkt wordt.',
+    name: 'Factum Vastgoed',
+    service: 'Detailing',
+    text: 'Fantastisch werk ! Bravo👏',
+    href: 'https://www.instagram.com/ynscarcare/',
   },
   {
-    name: 'Niels V.',
-    service: 'Premium wasbeurt',
-    text: 'Mijn wagen stond er perfect bij. Correct, professioneel en vooral een prachtig eindresultaat.',
+    name: 'VerheyenCarTechnics',
+    service: 'Detailing',
+    text: 'Binnenkort mag je hem nog eens onder handen nemen 🤝',
+    href: 'https://www.instagram.com/ynscarcare/',
+  },
+  {
+    name: 'Boerentuin',
+    service: 'Detailing',
+    text: 'De camionette was super proper en tot in de puntjes verzorgd. Altijd fijn om met zo’n nette en frisse wagen de baan op te kunnen. Echt een aanrader!',
+    href: 'https://www.instagram.com/ynscarcare/',
+  },
+  {
+    name: 'Boze_GTI',
+    service: 'Detailing',
+    text: 'Super service, dikke merci mannen!',
+    href: 'https://www.instagram.com/ynscarcare/',
   },
 ];
 
@@ -59,7 +76,13 @@ export function ReviewsCarousel() {
         aria-label="Klantbeoordelingen"
       >
         {[...reviews, ...reviews].map((review, index) => (
-          <article key={`${review.name}-${index}`} className="w-[min(82vw,390px)] shrink-0 snap-start border border-[#373735] bg-[#1a1a19] p-6 sm:p-7">
+          <Link
+            key={`${review.name}-${index}`}
+            href={review.href}
+            target="_blank"
+            rel="noreferrer"
+            className="w-[min(82vw,390px)] shrink-0 snap-start border border-[#373735] bg-[#1a1a19] p-6 transition-colors hover:border-[#f9b233] sm:p-7"
+          >
             <div className="flex gap-1 text-[#f9b233]" aria-label="5 van 5 sterren">
               {Array.from({ length: 5 }, (_, star) => <Star key={star} size={15} fill="currentColor" />)}
             </div>
@@ -68,7 +91,7 @@ export function ReviewsCarousel() {
               <p className="text-sm font-bold">{review.name}</p>
               <p className="mt-1 text-xs text-[#a6a6a0]">{review.service}</p>
             </div>
-          </article>
+          </Link>
         ))}
       </div>
       <div className="content-width mt-1 text-xs font-bold uppercase tracking-[0.1em] text-[#a6a6a0]">Sleep om meer ervaringen te bekijken</div>

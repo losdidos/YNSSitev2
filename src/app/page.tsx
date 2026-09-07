@@ -4,13 +4,7 @@ import { ArrowDownRight, ArrowUpRight, Check } from 'lucide-react';
 import { ReviewsCarousel } from '@/components/reviews-carousel';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
-
-const services = [
-  { title: 'Interieur\ndetailing', image: '/pictures/Black_mercedes_interieur_frontdash_clean.jpg', id: '01' },
-  { title: 'Polijsteren', image: '/pictures/Scherm_afbeelding 2026-09-02 om 14.42.44.png', id: '02' },
-  { title: 'Keramische\ncoating', image: '/pictures/Scherm_afbeelding 2026-09-02 om 14.43.07.png', id: '03' },
-  { title: 'Premium\nwasbeurt', image: '/pictures/image.png', id: '04' },
-];
+import { services } from '@/lib/services-data';
 
 export default function HomePage() {
   return (
@@ -76,13 +70,13 @@ export default function HomePage() {
               </div>
               <p className="max-w-sm text-sm leading-6 text-[#b9b9b5]">Van onderhoud tot een volledige transformatie. Kies de behandeling die bij jouw wagen past.</p>
             </div>
-            <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((service) => (
-                <Link key={service.id} href="/diensten" className="group relative aspect-[4/5] overflow-hidden bg-[#252525]">
-                  <Image src={service.image} alt={service.title.replace('\n', ' ')} fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover transition duration-500 group-hover:scale-105" />
+                <Link key={service.slug} href={`/diensten/${service.slug}`} className="group relative aspect-[4/5] overflow-hidden bg-[#252525]">
+                  <Image src={service.image} alt={service.imageAlt} fill sizes="(min-width: 1024px) 33vw, 50vw" className="object-cover transition duration-500 group-hover:scale-105" />
                   <span className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
                   <span className="service-glow pointer-events-none absolute inset-0" />
-                  <span className="display absolute bottom-5 left-5 whitespace-pre-line text-3xl text-white">{service.title}</span>
+                  <span className="display absolute bottom-5 left-5 whitespace-pre-line text-3xl text-white">{service.tileLabel}</span>
                 </Link>
               ))}
             </div>
@@ -113,7 +107,7 @@ export default function HomePage() {
               <ul className="mt-7 grid gap-3 text-sm font-bold">
                 {['Grondige reiniging', 'Detailing van alle oppervlakken', 'Frisse, verzorgde afwerking'].map((item) => <li key={item} className="flex items-center gap-3"><Check size={18} className="text-[#9a6500]" />{item}</li>)}
               </ul>
-              <Link href="/diensten#interieur" className="cta-primary mt-8 self-start">Ontdek interieur detailing <ArrowUpRight size={17} /></Link>
+              <Link href="/diensten/detailing" className="cta-primary mt-8 self-start">Ontdek interieur detailing <ArrowUpRight size={17} /></Link>
             </div>
           </div>
         </section>
@@ -124,7 +118,7 @@ export default function HomePage() {
               <p className="eyebrow text-[#f9b233]">Lakcorrectie & bescherming</p>
               <h2 className="display mt-5 text-5xl sm:text-6xl">Glans die<br />blijft hangen.</h2>
               <p className="mt-6 max-w-md leading-7 text-[#d1d1cd]">Polijsten haalt de volle uitstraling van je lak weer naar boven. Met een keramische coating beschermen we die finish langdurig tegen de elementen.</p>
-              <Link href="/diensten#keramische-coating" className="cta-primary mt-8 self-start">Bekijk coatings <ArrowUpRight size={17} /></Link>
+              <Link href="/diensten/keramische-coating" className="cta-primary mt-8 self-start">Bekijk coatings <ArrowUpRight size={17} /></Link>
             </div>
             <div className="relative min-h-[400px] overflow-hidden lg:my-12">
               <Image src="/pictures/porshe_tyre_after.jpeg" alt="Afgewerkte Porsche met glanzende velg" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />

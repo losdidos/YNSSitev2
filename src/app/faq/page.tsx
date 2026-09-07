@@ -1,6 +1,7 @@
 'use client';
 
 import { ChevronDown } from 'lucide-react';
+import Link from 'next/link';
 import { useState } from 'react';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
@@ -96,6 +97,11 @@ export default function FaqPage() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="mt-12 flex justify-center">
+          <Link href="/algemene-voorwaarden" className="cta-primary">
+            Algemene voorwaarden
+          </Link>
         </div>
       </main>
       <SiteFooter />
