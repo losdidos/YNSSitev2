@@ -1,5 +1,6 @@
 import { headers } from 'next/headers';
 import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -20,7 +21,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang="nl" data-scroll-behavior="smooth">
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
