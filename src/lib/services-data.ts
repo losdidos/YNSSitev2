@@ -115,10 +115,10 @@ export const services: ServiceDefinition[] = [
   },
   {
     slug: 'window-tinting',
-    navTitle: 'Raamtinting',
+    navTitle: 'Window Tinting',
     navLabel: 'Window Tinting',
-    tileLabel: 'Raamtinting',
-    title: 'Raamtinting',
+    tileLabel: 'Window\nTinting',
+    title: 'Window Tinting',
     tagline: 'Minder hitte, meer privacy',
     description:
       'Raamtinting vermindert hitte en inkijk, beschermt het interieur tegen UV-schade en geeft je wagen een strakke, verzorgde uitstraling.',
@@ -129,7 +129,7 @@ export const services: ServiceDefinition[] = [
     ],
     packages: [
       {
-        name: 'Raamtinting',
+        name: 'Window Tinting',
         description:
           'Raamtinting vermindert hitte en inkijk, beschermt het interieur tegen UV-schade en geeft je wagen in één keer een strakkere, verzorgde uitstraling.',
         features: ['Minder hitte en inkijk', 'Bescherming tegen UV-schade', 'Strakke, verzorgde uitstraling'],
@@ -140,10 +140,10 @@ export const services: ServiceDefinition[] = [
   },
   {
     slug: 'bestickering',
-    navTitle: 'Bedrijfsreclame bestickeren',
+    navTitle: 'Business Vehicle Branding',
     navLabel: 'Business Vehicle Branding',
-    tileLabel: 'Bedrijfsreclame\nbestickeren',
-    title: 'Bedrijfsreclame bestickeren',
+    tileLabel: 'Business Vehicle\nBranding',
+    title: 'Business Vehicle Branding',
     tagline: 'Een rijdend visitekaartje',
     description:
       'Laat je bedrijfswagen opvallen met professionele bestickering. Een rijdend visitekaartje: de eerste indruk zegt alles.',
@@ -154,7 +154,7 @@ export const services: ServiceDefinition[] = [
     ],
     packages: [
       {
-        name: 'Bedrijfsreclame bestickeren',
+        name: 'Business Vehicle Branding',
         description:
           'We ontwerpen en plaatsen bestickering op maat van jouw huisstijl, zodat je bedrijfswagen overal opvalt als een rijdend visitekaartje.',
         features: ['Ontwerp op maat van je huisstijl', 'Professionele plaatsing en afwerking'],
@@ -165,10 +165,10 @@ export const services: ServiceDefinition[] = [
   },
   {
     slug: 'keramische-coating',
-    navTitle: 'Keramische coating',
+    navTitle: 'Ceramic Coating',
     navLabel: 'Ceramic Coating',
-    tileLabel: 'Keramische\ncoating',
-    title: 'Keramische coating',
+    tileLabel: 'Ceramic\nCoating',
+    title: 'Ceramic Coating',
     tagline: 'Velgen, ramen of carrosserie',
     description:
       'Duurzame bescherming met een intense glans en een waterafstotende finish. Kies een coating voor de velgen, de ramen, de carrosserie, of een combinatie.',
@@ -201,10 +201,10 @@ export const services: ServiceDefinition[] = [
   },
   {
     slug: 'interior-customisation',
-    navTitle: 'Interior customisation',
+    navTitle: 'Interior Customization',
     navLabel: 'Interior Customization',
-    tileLabel: 'Interior\ncustomisation',
-    title: 'Interior customisation',
+    tileLabel: 'Interior\nCustomization',
+    title: 'Interior Customization',
     tagline: 'Een interieur op jouw maat',
     description:
       'Van kleine accenten tot een volledig persoonlijke interieurbeleving: we bekijken samen met jou de mogelijkheden voor jouw wagen.',
@@ -215,7 +215,7 @@ export const services: ServiceDefinition[] = [
     ],
     packages: [
       {
-        name: 'Interior customisation',
+        name: 'Interior Customization',
         description:
           'Van kleine accenten tot een volledig persoonlijke interieurbeleving: we denken met je mee over de mogelijkheden en werken je wensen vakkundig uit.',
         features: ['Persoonlijk advies op maat', 'Van kleine accenten tot volledige make-over'],

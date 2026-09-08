@@ -14,7 +14,7 @@ export function SiteFooter() {
             className="mb-6 h-auto w-52 object-contain object-left"
           />
           <p className="max-w-sm text-sm leading-6 text-[#b9b9b5]">
-            Professionele car care voor wie zijn wagen de aandacht wil geven die hij verdient.
+            Onze diensten verschillen van de gebruikelijke autoverzorging. YNS Car Care biedt een complete oplossing voor degenen die uitsluitend vertrouwd zijn met het beste.
           </p>
         </div>
         <div>

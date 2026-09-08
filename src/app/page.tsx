@@ -115,13 +115,13 @@ export default function HomePage() {
         <section className="bg-[#20201e] text-white">
           <div className="content-width grid min-h-[620px] lg:grid-cols-2">
             <div className="flex flex-col justify-center py-20 lg:py-28">
-              <p className="eyebrow text-[#f9b233]">Lakcorrectie & bescherming</p>
-              <h2 className="display mt-5 text-5xl sm:text-6xl">Glans die<br />blijft hangen.</h2>
-              <p className="mt-6 max-w-md leading-7 text-[#d1d1cd]">Polijsten haalt de volle uitstraling van je lak weer naar boven. Met een keramische coating beschermen we die finish langdurig tegen de elementen.</p>
-              <Link href="/diensten/keramische-coating" className="cta-primary mt-8 self-start">Bekijk coatings <ArrowUpRight size={17} /></Link>
+              <p className="eyebrow text-[#f9b233]">Interior Customization</p>
+              <h2 className="display mt-5 text-5xl sm:text-6xl">Een interieur<br />op jouw maat.</h2>
+              <p className="mt-6 max-w-md leading-7 text-[#d1d1cd]">Van kleine accenten tot een volledig persoonlijke interieurbeleving: we bekijken samen met jou de mogelijkheden voor jouw wagen.</p>
+              <Link href="/diensten/interior-customisation" className="cta-primary mt-8 self-start">Ontdek Interior Customization <ArrowUpRight size={17} /></Link>
             </div>
             <div className="relative min-h-[400px] overflow-hidden lg:my-12">
-              <Image src="/pictures/porshe_tyre_after.jpeg" alt="Afgewerkte Porsche met glanzende velg" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+              <Image src="/pictures/starroof.png" alt="Custom sterrenhemel in het interieur van een wagen" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
             </div>
           </div>
         </section>
