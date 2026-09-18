@@ -20,7 +20,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   await headers();
 
   return (
-    <html lang="nl" data-scroll-behavior="smooth">
+    <html lang="nl">
       <body>
         {children}
         <Analytics />

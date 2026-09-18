@@ -15,7 +15,9 @@
 }
 
 html {
-	scroll-behavior: smooth;
+	scroll-behavior: auto !important;
+	overflow-x: clip;
+	overscroll-behavior-y: none;
 }
 
 body {
@@ -23,6 +25,7 @@ body {
 	background: var(--yns-cream);
 	color: var(--yns-black);
 	font-family: Arial, Helvetica, sans-serif;
+	overflow-x: clip;
 }
 
 a {
@@ -63,7 +66,7 @@ select {
 }
 
 .page-shell {
-	overflow: clip;
+	overflow-x: clip;
 }
 
 .content-width {
@@ -157,6 +160,17 @@ select {
 }
 
 .reviews-track::-webkit-scrollbar {
+	display: none;
+}
+
+.social-strip {
+	mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+	-webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+	scrollbar-width: none;
+	-webkit-overflow-scrolling: touch;
+}
+
+.social-strip::-webkit-scrollbar {
 	display: none;
 }
 

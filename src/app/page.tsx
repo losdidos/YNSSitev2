@@ -4,6 +4,7 @@ import { ArrowDownRight, ArrowUpRight, Check } from 'lucide-react';
 import { ReviewsCarousel } from '@/components/reviews-carousel';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
+import { SocialShowcase } from '@/components/social-showcase';
 import { services } from '@/lib/services-data';
 
 export default function HomePage() {
@@ -11,28 +12,28 @@ export default function HomePage() {
     <div className="page-shell">
       <SiteHeader overlay />
       <main>
-        <section className="relative isolate min-h-[670px] overflow-hidden bg-black text-white md:min-h-[760px]">
+        <section className="relative isolate min-h-[100svh] overflow-hidden bg-black text-white">
           <span id="home-top-sentinel" className="absolute top-0 h-px w-px" aria-hidden="true" />
           <Image
-            src="/pictures/HeaderBMW.JPG"
-            alt="BMW professioneel gedetaild door YNS Car Care"
+            src="/pictures/porsheheader.jpg"
+            alt="Porsche professioneel verzorgd door YNS Car Care"
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[56%_75%] opacity-75"
+            className="object-cover object-center opacity-75"
           />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,.84)_0%,rgba(0,0,0,.58)_42%,rgba(0,0,0,.12)_100%)]" />
           <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black to-transparent" />
-          <div className="content-width relative flex min-h-[670px] flex-col justify-end pb-16 pt-32 md:min-h-[760px] md:pb-24">
+          <div className="content-width relative flex min-h-[100svh] flex-col justify-end pb-16 pt-32 md:pb-24">
             <p className="eyebrow reveal">YNS Car Care</p>
             <h1 className="display reveal mt-5 max-w-4xl text-[clamp(4.2rem,10vw,9.2rem)] text-white" style={{ animationDelay: '80ms' }}>
               Your new<br /><span className="text-[#f9b233]">status.</span>
             </h1>
             <p className="reveal mt-6 max-w-md text-base leading-7 text-[#e4e4df] md:text-lg" style={{ animationDelay: '150ms' }}>
-              Detailing met oog voor elk detail. Voor wagens die opnieuw mogen spreken.
+              Onze diensten verschillen van de gebruikelijke autoverzorging. YNS&apos;CarCare biedt een complete oplossing voor degenen die uitsluitend vertrouwd zijn met het beste.
             </p>
             <div className="reveal mt-8 flex flex-wrap gap-3" style={{ animationDelay: '220ms' }}>
-              <Link href="/booking" className="cta-primary">Maak afspraak <ArrowUpRight size={17} /></Link>
+              <Link href="/booking" className="cta-primary">Maak een afspraak <ArrowUpRight size={17} /></Link>
               <Link href="/diensten" className="cta-quiet">Bekijk diensten <ArrowDownRight size={17} /></Link>
             </div>
           </div>
@@ -42,18 +43,18 @@ export default function HomePage() {
           <div className="content-width grid items-start gap-10 lg:grid-cols-[0.95fr_1.05fr]">
             <div>
               <p className="eyebrow">Aandacht voor afwerking</p>
-              <h2 className="display mt-5 max-w-md text-5xl sm:text-6xl md:text-7xl">Geen snelle beurt.<br />Wel een zichtbaar verschil.</h2>
+              <h2 className="display mt-5 max-w-md text-5xl sm:text-6xl md:text-7xl">Vergeet een snelle beurt.<br />Kies voor een zichtbaar statement.</h2>
             </div>
             <div>
               <div className="aspect-[16/10] overflow-hidden rounded-lg bg-black">
-                <video autoPlay muted loop playsInline className="h-full w-full object-cover" aria-label="YNS Car Care detailing in actie">
+                <video autoPlay muted loop playsInline className="h-full w-full object-cover object-[center_60%]" aria-label="YNS Car Care detailing in actie">
                   <source src="/pictures/yns-detailing.mp4" type="video/mp4" />
                 </video>
               </div>
               <div className="mt-8 grid gap-7 text-base leading-7 text-[#444440] md:grid-cols-2">
-                <p>YNS Car Care brengt auto&apos;s terug naar hun beste vorm. Van een fris, verzorgd interieur tot lakcorrectie die diepte en glans terugbrengt.</p>
+                <p>Bij YNS Car Care beperken we ons niet tot eenvoudig opfrissen; wij brengen jouw auto naar zijn volledige potentieel. Van een perfect interieur en zorgvuldige lakcorrecties tot hoogwaardige keramische coatings en een onzichtbare PPF-bescherming. Bovendien verhogen we jouw uitstraling naar het hoogste niveau met unieke autowraps, tinten voor ramen en strakke bedrijfsbestickering. Geen halfwerk of onnodige stappen, maar precies op maat gemaakt en een onmiskenbare positie op de weg.</p>
                 <div>
-                  <p>Elke behandeling start met een eerlijke blik op jouw wagen. Daarna kiezen we de juiste aanpak, zonder onnodige stappen.</p>
+                  <p>Bij ons is jouw auto geen nummertje. Elk project begint met een grondige, rechtvaardige analyse en een zorgvuldig opgesteld behandelplan. Geen onnodige stappen of verkooptrucs, maar een heldere en effectieve weg naar ware perfectie. Je ontvangt precies maatwerk, de grootste impact en een afwerking die meteen een onmiskenbare indruk achterlaat.</p>
                   <Link href="/over-ons" className="mt-5 inline-flex items-center gap-2 border-b-2 border-[#f9b233] pb-1 text-sm font-bold uppercase">Over YNS <ArrowUpRight size={16} /></Link>
                 </div>
               </div>
@@ -73,7 +74,7 @@ export default function HomePage() {
             <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((service) => (
                 <Link key={service.slug} href={`/diensten/${service.slug}`} className="group relative aspect-[4/5] overflow-hidden bg-[#252525]">
-                  <Image src={service.image} alt={service.imageAlt} fill sizes="(min-width: 1024px) 33vw, 50vw" className="object-cover transition duration-500 group-hover:scale-105" />
+                  <Image src={service.image} alt={service.imageAlt} fill sizes="(min-width: 1024px) 33vw, 50vw" className="object-cover transition duration-500 group-hover:scale-105" style={{ objectPosition: service.imagePosition }} />
                   <span className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
                   <span className="service-glow pointer-events-none absolute inset-0" />
                   <span className="display absolute bottom-5 left-5 whitespace-pre-line text-3xl text-white">{service.tileLabel}</span>
@@ -126,15 +127,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="bg-[#f4f3ed] py-20 md:py-28">
-          <div className="content-width flex flex-col justify-between gap-10 lg:flex-row lg:items-end">
-            <div>
-              <p className="eyebrow">Klaar voor jouw nieuwe status?</p>
-              <h2 className="display mt-5 max-w-2xl text-5xl sm:text-6xl md:text-7xl">Jouw wagen.<br />Onze aandacht.</h2>
-            </div>
-            <Link href="/booking" className="cta-primary">Maak een afspraak <ArrowUpRight size={17} /></Link>
-          </div>
-        </section>
+        <SocialShowcase />
 
         <ReviewsCarousel />
       </main>

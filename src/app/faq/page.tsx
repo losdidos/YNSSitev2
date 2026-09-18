@@ -25,7 +25,7 @@ const questions = [
   },
   {
     question: 'Kan ik meerdere diensten combineren?',
-    answer: <p>Zeker. Beschrijf je wensen in het formulier en we stellen een passende behandeling voor.</p>,
+      answer: <p>Zeker. Beschrijf <strong>uitgebreid</strong> je wensen in het formulier en we stellen een passende behandeling voor.</p>,
   },
   {
     question: 'Wat is detailing?',
@@ -41,7 +41,7 @@ const questions = [
     question: 'Wat is een keramische coating en hoelang gaat deze mee?',
     answer: (
       <>
-        <p>Een keramische coating vormt een extra harde toplaag over de bestaande lak of ramen. Deze hecht zich aan het oppervlak, zodat je wagen langer proper en glanzend blijft, krasbestendiger wordt en water en vuil sterker afstoot.</p>
+          <p>Een keramische coating vormt een extra harde toplaag over de bestaande lak, ramen of velgen. Deze hecht zich aan het oppervlak, zodat je wagen langer proper en glanzend blijft, krasbestendiger wordt en water en vuil sterker afstoot.</p>
         <p className="mt-4">Bij correct onderhoud kan een coating, afhankelijk van het gekozen pakket, tot drie jaar meegaan. De levensduur varieert per wagen en hangt onder meer af van:</p>
         <ul className="mt-3 list-disc space-y-1 pl-5">
           <li>de manier en frequentie van wassen;</li>

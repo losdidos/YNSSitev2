@@ -87,7 +87,7 @@ Bij een annulering die minstens 24 uur vóór de afspraak wordt gemeld, worden g
 6.2. Laattijdige annulering
 Wanneer de klant een afspraak minder dan 24 uur vóór het afgesproken aanvangsuur annuleert of verplaatst, behoudt YNS'CarCare zich het recht voor een annuleringsvergoeding aan te rekenen van:
 
-30% van de prijs van de gereserveerde dienst, met een maximum van €50.
+30% van de prijs van de gereserveerde dienst, met een maximum van €175.
 
 Deze vergoeding heeft als doel de gereserveerde tijd en eventuele voorbereidingskosten te compenseren.
 
@@ -96,7 +96,7 @@ Wanneer de klant zonder voorafgaande verwittiging niet op de afspraak verschijnt
 
 Bij een no-show behoudt YNS'CarCare zich het recht voor een vergoeding aan te rekenen van:
 
-50% van de prijs van de gereserveerde dienst, met een maximum van €75.
+50% van de prijs van de gereserveerde dienst, met een maximum van €262,50.
 
 Indien de klant reeds een voorschot heeft betaald, kan de toepasselijke vergoeding hiermee worden verrekend, voor zover wettelijk toegestaan.
 

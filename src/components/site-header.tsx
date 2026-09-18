@@ -89,8 +89,8 @@ export function SiteHeader({ overlay = false }: SiteHeaderProps) {
                 </div>
                 <Link href="/booking" className="group/panel relative min-h-72 overflow-hidden">
                   <Image
-                    src="/pictures/porshe_tyre_after.jpeg"
-                    alt="Glanzend afgewerkte Porsche velg"
+                    src="/pictures/GTIDienstenHeader.jpg"
+                    alt="Interieur van een Volkswagen GTI"
                     fill
                     sizes="300px"
                     className="object-cover opacity-60 transition duration-300 group-hover/panel:scale-105"
@@ -112,7 +112,7 @@ export function SiteHeader({ overlay = false }: SiteHeaderProps) {
         </nav>
 
         <Link href="/booking" className="cta-primary hidden lg:inline-flex">
-          Maak afspraak
+          Maak een afspraak
         </Link>
         <button
           type="button"
@@ -149,7 +149,7 @@ export function SiteHeader({ overlay = false }: SiteHeaderProps) {
             </details>
             <Link href="/over-ons" onClick={() => setMobileOpen(false)} className="py-3 text-lg font-bold">Over ons</Link>
             <Link href="/faq" onClick={() => setMobileOpen(false)} className="py-3 text-lg font-bold">FAQ</Link>
-            <Link href="/booking" onClick={() => setMobileOpen(false)} className="cta-primary mt-3">Maak afspraak</Link>
+            <Link href="/booking" onClick={() => setMobileOpen(false)} className="cta-primary mt-3">Maak een afspraak</Link>
           </div>
         </nav>
       )}

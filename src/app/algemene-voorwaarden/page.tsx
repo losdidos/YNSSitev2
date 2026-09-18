@@ -82,10 +82,7 @@ export default function AlgemeneVoorwaardenPage() {
 
         <section className="content-width py-12 md:py-20">
           <article className="mx-auto max-w-3xl bg-white p-6 text-[#30302d] shadow-sm sm:p-10 md:p-14">
-            <div className="border-b border-[#d7d6d0] pb-7 text-sm leading-7 text-[#5f5f58]">
-              {terms.intro.map((line) => <p key={line}>{line}</p>)}
-            </div>
-            <div className="mt-8 space-y-10 text-sm leading-7 md:text-base">
+            <div className="space-y-10 text-sm leading-7 md:text-base">
               {terms.sections.map((section) => (
                 <section key={section.title}>
                   <h2 className="display text-2xl text-[#111] sm:text-3xl">{section.title}</h2>
@@ -95,6 +92,9 @@ export default function AlgemeneVoorwaardenPage() {
                 </section>
               ))}
             </div>
+            <p className="mt-10 border-t border-[#d7d6d0] pt-6 text-center text-xs text-[#8a8a83]">
+              {terms.intro.join(' - ')}
+            </p>
           </article>
 
           <div className="mt-10 flex justify-center">
