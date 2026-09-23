@@ -111,8 +111,9 @@ export function SiteHeader({ overlay = false }: SiteHeaderProps) {
           </Link>
         </nav>
 
-        <Link href="/booking" className="cta-primary hidden lg:inline-flex">
-          Maak een afspraak
+        <Link href="/booking" className="cta-primary inline-flex">
+          <span className="lg:hidden">Afspraak</span>
+          <span className="hidden lg:inline">Maak een afspraak</span>
         </Link>
         <button
           type="button"

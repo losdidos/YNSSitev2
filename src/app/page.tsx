@@ -20,7 +20,7 @@ export default function HomePage() {
             fill
             priority
             sizes="100vw"
-            className="object-cover object-center opacity-75"
+            className="object-cover object-[90%_center] opacity-75 md:object-center"
           />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,.84)_0%,rgba(0,0,0,.58)_42%,rgba(0,0,0,.12)_100%)]" />
           <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black to-transparent" />
