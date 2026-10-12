@@ -2,7 +2,15 @@ import { Suspense } from 'react';
 import { Check } from 'lucide-react';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
+import { pageMetadata } from '@/lib/site-config';
 import { BookingForm } from './booking-form';
+
+export const metadata = pageMetadata({
+  title: 'Afspraak of offerte aanvragen',
+  description:
+    'Vraag vrijblijvend een afspraak of offerte aan bij YNS Car Care in Haacht voor detailing, keramische coating, wrapping, PPF of window tinting.',
+  path: '/booking',
+});
 
 export default function BookingPage() {
   return (

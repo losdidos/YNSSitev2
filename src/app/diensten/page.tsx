@@ -4,8 +4,14 @@ import { ArrowUpRight } from 'lucide-react';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
 import { services } from '@/lib/services-data';
+import { pageMetadata } from '@/lib/site-config';
 
-export const metadata = { title: 'Diensten' };
+export const metadata = pageMetadata({
+  title: 'Diensten: detailing, coating, wrapping & tinting',
+  description:
+    'Ontdek alle diensten van YNS Car Care in Haacht: car detailing, keramische coating, wrapping & PPF, window tinting, bedrijfswagenbestickering en interior customization.',
+  path: '/diensten',
+});
 
 export default function ServicesPage() {
   return (

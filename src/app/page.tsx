@@ -6,6 +6,15 @@ import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
 import { SocialShowcase } from '@/components/social-showcase';
 import { services } from '@/lib/services-data';
+import { pageMetadata } from '@/lib/site-config';
+
+export const metadata = pageMetadata({
+  title: 'YNS Car Care | Car detailing, keramische coating & wrapping in Haacht',
+  description:
+    'YNS Car Care in Haacht: professionele car detailing, keramische coating, wrapping & PPF, window tinting en bedrijfswagenbestickering voor Leuven, Mechelen en omgeving. Vraag een offerte aan.',
+  path: '/',
+  absoluteTitle: true,
+});
 
 export default function HomePage() {
   return (
@@ -99,7 +108,7 @@ export default function HomePage() {
         <section className="bg-white py-20 md:py-28">
           <div className="content-width grid gap-8 lg:grid-cols-2 lg:gap-16">
             <div className="relative min-h-[460px] overflow-hidden bg-[#222]">
-              <Image src="/pictures/Black_mercedes_interieur_frontdash_clean.jpg" alt="Verzorgd Mercedes interieur" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+              <Image src="/pictures/Black_mercedes_interieur_frontdash_clean.jpg" alt="Mercedes interieur na interieur detailing" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
             </div>
             <div className="flex flex-col justify-center py-2 lg:py-10">
               <p className="eyebrow">Interieur detailing</p>

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { siteConfig } from '@/lib/site-config';
 
 export function SiteFooter() {
   return (
@@ -30,8 +31,8 @@ export function SiteFooter() {
           <p className="mb-5 text-xs font-bold uppercase tracking-[0.1em] text-[#f9b233]">Contact</p>
           <p className="text-sm leading-6 text-[#b9b9b5]">Neem contact op voor een afspraak of een offerte op maat.</p>
           <div className="mt-5 flex flex-col gap-2 text-sm font-bold">
-            <a href="tel:+32470404597" className="hover:text-[#f9b233]">0470/40.45.97</a>
-            <a href="mailto:info@ynscarcare.be" className="hover:text-[#f9b233]">info@ynscarcare.be</a>
+            <a href={`tel:${siteConfig.phoneHref}`} className="hover:text-[#f9b233]">{siteConfig.phone}</a>
+            <a href={`mailto:${siteConfig.email}`} className="hover:text-[#f9b233]">{siteConfig.email}</a>
           </div>
           <Link href="/booking" className="mt-5 inline-block text-sm font-bold underline decoration-[#f9b233] underline-offset-4 hover:text-[#f9b233]">
             Contacteer ons

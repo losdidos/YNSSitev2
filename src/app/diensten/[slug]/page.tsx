@@ -3,8 +3,10 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowUpRight, Check } from 'lucide-react';
 import { SiteFooter } from '@/components/site-footer';
+import { JsonLd } from '@/components/json-ld';
 import { SiteHeader } from '@/components/site-header';
 import { getServiceBySlug, services } from '@/lib/services-data';
+import { absoluteUrl, businessId, pageMetadata, siteConfig } from '@/lib/site-config';
 
 export function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
@@ -13,7 +15,8 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const service = getServiceBySlug(slug);
-  return { title: service?.title ?? 'Diensten' };
+  if (!service) return { title: 'Diensten' };
+  return pageMetadata({ title: service.seoTitle, description: service.seoDescription, path: `/diensten/${service.slug}` });
 }
 
 export default async function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -21,8 +24,43 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
   const service = getServiceBySlug(slug);
   if (!service) notFound();
 
+  const url = absoluteUrl(`/diensten/${service.slug}`);
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Service',
+        '@id': `${url}#service`,
+        name: service.title,
+        serviceType: service.title,
+        description: service.seoDescription,
+        url,
+        image: absoluteUrl(service.image),
+        provider: { '@id': businessId },
+        areaServed: siteConfig.areaServed.map((name) => ({ '@type': 'City', name })),
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: service.title,
+          itemListElement: service.packages.map((pkg) => ({
+            '@type': 'Offer',
+            itemOffered: { '@type': 'Service', name: pkg.name, description: pkg.description },
+          })),
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: absoluteUrl('/') },
+          { '@type': 'ListItem', position: 2, name: 'Diensten', item: absoluteUrl('/diensten') },
+          { '@type': 'ListItem', position: 3, name: service.title, item: url },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className="page-shell bg-[#f4f3ed]">
+      <JsonLd data={structuredData} />
       <SiteHeader />
       <main>
         <section className="bg-[#111] py-20 text-white md:py-28">

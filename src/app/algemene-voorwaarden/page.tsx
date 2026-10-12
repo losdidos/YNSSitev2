@@ -4,10 +4,13 @@ import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
+import { pageMetadata } from '@/lib/site-config';
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: 'Algemene voorwaarden',
-};
+  description: "Algemene verkoopsvoorwaarden van YNS'CarCare, Sint-Annaveld 15, 3150 Haacht.",
+  path: '/algemene-voorwaarden',
+});
 
 function getTermsSections() {
   const source = readFileSync(path.join(process.cwd(), 'algemeene.txt'), 'utf8');

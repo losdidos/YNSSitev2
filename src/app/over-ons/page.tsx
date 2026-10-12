@@ -3,8 +3,14 @@ import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
+import { pageMetadata } from '@/lib/site-config';
 
-export const metadata = { title: 'Over ons' };
+export const metadata = pageMetadata({
+  title: 'Over ons',
+  description:
+    'Maak kennis met YNS Car Care uit Haacht: car detailing en autoverzorging met maatwerk, eerlijk advies en aandacht voor elk detail.',
+  path: '/over-ons',
+});
 
 export default function AboutPage() {
   return (
@@ -26,7 +32,7 @@ export default function AboutPage() {
         <section className="bg-[#111] text-white">
           <div className="content-width grid min-h-[590px] lg:grid-cols-[1.05fr_0.95fr]">
             <div className="relative min-h-[380px] lg:order-2">
-              <Image src="/pictures/Overonspic.jpg" alt="YNS Car Care voertuigbehandeling" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+              <Image src="/pictures/Overonspic.jpg" alt="Gereinigd lederen Porsche interieur na detailing door YNS Car Care" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
             </div>
             <div className="flex flex-col justify-center py-16 lg:py-24">
               <p className="eyebrow text-[#f9b233]">Onze aanpak</p>

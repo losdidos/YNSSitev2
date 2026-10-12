@@ -10,6 +10,9 @@ export interface ServiceDefinition {
   navLabel: string;
   tileLabel: string;
   title: string;
+  /** Used only in <title> and meta description; never rendered on the page. */
+  seoTitle: string;
+  seoDescription: string;
   tagline: string;
   description: string;
   highlights: string[];
@@ -35,6 +38,9 @@ export const services: ServiceDefinition[] = [
     navLabel: 'Detailing',
     tileLabel: 'Detailing',
     title: 'Detailing',
+    seoTitle: 'Car detailing interieur & exterieur in Haacht',
+    seoDescription:
+      'Professionele car detailing in Haacht, Leuven en Mechelen: dieptereiniging van interieur en exterieur, afgestemd op leder, stof of Alcantara. Vraag vrijblijvend een offerte aan.',
     tagline: 'Interieur en/of exterieur, afgestemd op jouw wagen',
     description:
       'Elke auto verdient een specifieke behandeling. Wij bieden jouw wagen een uitgebreide, transparante interieur- en/of exterieurbehandeling met aandacht voor jouw wensen. Geen standaardmethode, maar precies wat jouw lak en interieur nodig hebben.',
@@ -83,7 +89,7 @@ export const services: ServiceDefinition[] = [
     ],
     note: 'Laat bij je aanvraag weten of je wagen stoffen, lederen of Alcantara zetels heeft. Zo kunnen we de juiste producten en technieken voorbereiden.',
     image: '/pictures/Black_mercedes_interieur_frontdash_clean.jpg',
-    imageAlt: 'Grondig gereinigd interieur van een wagen',
+    imageAlt: 'Mercedes dashboard na interieur detailing door YNS Car Care',
   },
   {
     slug: 'wrapping-ppf',
@@ -91,6 +97,9 @@ export const services: ServiceDefinition[] = [
     navLabel: 'Wrapping & PPF',
     tileLabel: 'Wrapping\n& PPF',
     title: 'Wrapping & PPF',
+    seoTitle: 'Car wrapping & PPF lakbescherming in Haacht',
+    seoDescription:
+      'Car wrapping en Paint Protection Film (PPF) in Haacht en omgeving: kleurverandering, bescherming tegen steenslag en krassen, en interieurbekleding op maat.',
     tagline: 'Bescherming en personalisatie op maat',
     description:
       'Of je nu een volledige kleurverandering wilt door middel van een strakke exterieur wrap, het bekleden van bepaalde interieurelementen of een onzichtbare Paint Protection Film (PPF) om je lak te beschermen tegen steenslag en krassen, wij garanderen een professionele afwerking.',
@@ -117,11 +126,11 @@ export const services: ServiceDefinition[] = [
         features: ['Bekleding van interieuronderdelen', 'Persoonlijke materiaal- en kleurkeuze'],
       },
     ],
-    image: '/pictures/Scherm_afbeelding 2026-09-02 om 14.42.44.png',
+    image: '/pictures/wrapping-ppf.png',
     extraOptions: [],
     extraOptionsDescription:
       'Wil je de bescherming écht naar een hoger niveau tillen? Laat je nieuwe wrap of PPF optioneel voorzien van een speciaal ontwikkelde keramische coating. Dit maakt de folie extreem vuil- en waterafstotend, versterkt de kleurintensiteit en zorgt ervoor dat je wagen veel sneller en gemakkelijker te onderhouden is.',
-    imageAlt: 'Wagen in behandeling voor wrapping of PPF',
+    imageAlt: 'Auto in behandeling voor car wrapping en PPF lakbescherming',
   },
   {
     slug: 'window-tinting',
@@ -129,6 +138,9 @@ export const services: ServiceDefinition[] = [
     navLabel: 'Window Tinting',
     tileLabel: 'Window\nTinting',
     title: 'Window Tinting',
+    seoTitle: 'Window tinting: autoramen tinten in Haacht',
+    seoDescription:
+      'Auto ramen laten tinten in Haacht, Leuven of Mechelen: hoogwaardige folie op maat voor minder hitte, meer privacy en bescherming tegen UV-schade.',
     tagline: 'Koeler, comfortabeler en beter beschermd',
     description:
       'Wij zorgen voor een koele, comfortabele rit en een interieur dat optimaal beschermd blijft tegen UV-schade. Door hitte en ongewenste blikken stijlvol buiten te houden, geniet u van een rustgevend interieur en een uitstraling die uw dagelijkse rijervaring net wat stijlvoller en gemakkelijker maakt.',
@@ -144,7 +156,7 @@ export const services: ServiceDefinition[] = [
       },
     ],
     image: '/pictures/Black_Audi_mercedes_frontpic.jpg',
-    imageAlt: 'Wagen met getinte ramen',
+    imageAlt: 'Audi en Mercedes met getinte autoramen (window tinting)',
     imagePosition: 'center 62%',
   },
   {
@@ -153,6 +165,9 @@ export const services: ServiceDefinition[] = [
     navLabel: 'Business Vehicle Branding',
     tileLabel: 'Business Vehicle\nBranding',
     title: 'Business Vehicle Branding',
+    seoTitle: 'Bedrijfswagen bestickering & belettering in Haacht',
+    seoDescription:
+      'Bestickering en belettering van bedrijfswagens in Haacht en omgeving: ontwerp op maat van je merkidentiteit en een strakke, duurzame plaatsing.',
     tagline: 'Je merk. Onze nauwkeurigheid. De grootste impact.',
     description:
       'Uw bedrijfswagen is elke dag op weg naar klanten, partners en nieuwe mogelijkheden. Het is de eerste blik op uw bedrijf op de weg — een rijdend visitekaartje dat een gevoel van autoriteit en professionaliteit verspreid. Met onze hoogwaardige bestickering en elegante afwerking, transformeren we uw voertuig tot een effectief marketingmiddel.',
@@ -169,7 +184,7 @@ export const services: ServiceDefinition[] = [
       },
     ],
     image: '/pictures/branding.jpg',
-    imageAlt: 'Bedrijfswagen met professionele branding',
+    imageAlt: 'Bedrijfswagen met bestickering en belettering op maat',
   },
   {
     slug: 'keramische-coating',
@@ -177,6 +192,9 @@ export const services: ServiceDefinition[] = [
     navLabel: 'Ceramic Coating',
     tileLabel: 'Ceramic\nCoating',
     title: 'Ceramic Coating',
+    seoTitle: 'Keramische coating voor je auto in Haacht',
+    seoDescription:
+      'Keramische coating voor carrosserie, velgen, ramen en softtop in Haacht, Leuven en Mechelen: intense glans, hydrofobe bescherming en eenvoudiger onderhoud.',
     tagline: 'Wheels, Glass or Bodywork',
     description:
       'Met onze hoogwaardige keramische coatings zorgen we ervoor dat je velgen, ramen of hele carrosserie beschermd zijn tegen vuil en weersinvloeden. Zulke hoogwaardige keramische coatings bieden een intense glans en een zeer hydrofobe laag die externe elementen zonder moeite afstoot.',
@@ -222,6 +240,9 @@ export const services: ServiceDefinition[] = [
     navLabel: 'Interior Customization',
     tileLabel: 'Interior\nCustomization',
     title: 'Interior Customization',
+    seoTitle: 'Interior customization & sterrenhemel in Haacht',
+    seoDescription:
+      'Interieur op maat in Haacht en omgeving: van sterrenhemel en stiksels tot een volledige restyling van je auto-interieur, met persoonlijk advies.',
     tagline: 'Een interieur op jouw maat.',
     description:
       'Een standaard interieur past bij iedereen, maar jij zoekt maatwerk dat jouw stijl weerspiegelt. We creëren samen een bijzonder interieur dat volledig aansluit bij jouw stijl en voorkeuren. Wij verenigen vakmanschap met aandacht voor detail, zodat jij elke rit ervaart in een unieke ambiance van hoogstaand comfort en prestige.',
@@ -237,7 +258,7 @@ export const services: ServiceDefinition[] = [
       },
     ],
     image: '/pictures/starroof.png',
-    imageAlt: 'Interieur met sterrenhemel op maat',
+    imageAlt: 'Auto-interieur met sterrenhemel op maat (interior customization)',
   },
 ];
 

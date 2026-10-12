@@ -11,7 +11,7 @@ Naam ondernemer: Kemps Noah
 Ondernemingsnummer: BE1034 746 609
 Adres: Sint-Annaveld 15, 3150 Haacht
 E-mail: info@ynscarcare.be
-Telefoon: +32 470 40 40 45 97
+Telefoon: +32 470 40 45 97
 
 Hierna genoemd: "YNS'CarCare", "de onderneming", "de dienstverlener" of "wij".
 
@@ -80,7 +80,7 @@ De klant kan een gemaakte afspraak kosteloos annuleren of verplaatsen tot uiterl
 De annulering of wijziging dient te gebeuren via:
 
 e-mail: info@ynscarcare.be
-telefoon: 0470 40 45 97
+telefoon: +32 470 40 45 97
 of via het communicatiekanaal waarmee de afspraak werd gemaakt.
 Bij een annulering die minstens 24 uur vóór de afspraak wordt gemeld, worden geen annuleringskosten aangerekend.
 
@@ -364,4 +364,4 @@ Naam ondernemer: Kemps Noah
 Ondernemingsnummer: BE1034 746 609
 Adres: Sint-Annaveld 15, 3150 Haacht
 E-mail: info@ynscarcare.be
-Telefoon: +32 470 40 40 45 97
+Telefoon: +32 470 40 45 97
